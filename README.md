@@ -50,3 +50,15 @@ Secrets necessários: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION
 ## State remoto
 
 State em S3 (`oficina-mecanica-tfstate-159157616728`, key `auth/terraform.tfstate`), mesmo bucket compartilhado com os demais repositórios Terraform do projeto.
+
+## Deploy ativo
+
+- **Endpoint**: `https://s5zehub8y3.execute-api.us-east-1.amazonaws.com/auth/login` (saída `api_endpoint` do último `terraform apply` bem-sucedido). Como o ambiente roda em uma **AWS Academy Learner Lab**, o endpoint some quando a sessão do Lab expira/reseta — se o link não responder, é sinal de que precisa de um novo `terraform apply` com uma sessão do Lab ativa.
+- **Postman**: [`postman_collection.json`](postman_collection.json) — importe direto no Postman (`Import → File`) ou no Insomnia. Contém a única rota deste repositório, `POST /auth/login`.
+
+Exemplo via `curl`:
+```bash
+curl -X POST https://s5zehub8y3.execute-api.us-east-1.amazonaws.com/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"cpf": "529.982.247-25"}'
+```
