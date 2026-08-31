@@ -1,0 +1,35 @@
+{
+  "info": {
+    "name": "oficina-mecanica-auth",
+    "description": "Function Serverless de autenticacao via CPF (Fase 3, OficinaMecanica).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://s5zehub8y3.execute-api.us-east-1.amazonaws.com",
+      "description": "Saida 'api_endpoint' do terraform apply deste repositorio. Muda se o ambiente AWS Academy Learner Lab for reprovisionado."
+    }
+  ],
+  "item": [
+    {
+      "name": "Login por CPF",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cpf\": \"529.982.247-25\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "login"]
+        },
+        "description": "Valida o CPF, consulta o cliente no RDS (existencia + status ativo) e devolve um JWT (role=Cliente) valido para consumir as rotas protegidas da API principal. Retorna 401 se o CPF for invalido, o cliente nao existir ou estiver inativo."
+      }
+    }
+  ]
+}
