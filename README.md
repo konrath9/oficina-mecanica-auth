@@ -49,7 +49,7 @@ Secrets necessários: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION
 
 ## State remoto
 
-State em S3 (`oficina-mecanica-tfstate-159157616728`, key `auth/terraform.tfstate`), mesmo bucket compartilhado com os demais repositórios Terraform do projeto.
+State em S3 (`oficina-mecanica-tfstate-897966076873`, key `auth/terraform.tfstate`), mesmo bucket compartilhado com os demais repositórios Terraform do projeto.
 
 ## Deploy ativo
 

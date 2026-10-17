@@ -2,7 +2,7 @@
 # iam:CreateRole, entao nenhuma role/policy nova e criada aqui (ver ADR sobre restricoes do
 # AWS Academy). O ARN e fixo porque a conta e dedicada a este projeto.
 locals {
-  lab_role_arn = "arn:aws:iam::159157616728:role/LabRole"
+  lab_role_arn = "arn:aws:iam::897966076873:role/LabRole"
 }
 
 resource "aws_lambda_function" "auth" {
