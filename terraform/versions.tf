@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "oficina-mecanica-tfstate-159157616728"
+    bucket = "oficina-mecanica-tfstate-897966076873"
     key    = "auth/terraform.tfstate"
     region = "us-east-1"
   }
